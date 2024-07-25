@@ -1,0 +1,48 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "M PLUS 1 Code", monospace;
+}
+.ly_cont{
+  width: min(1200px,90%);
+  margin-inline: auto;
+}
+.ly_header{
+  display: grid;
+  height: 80vh;
+}
+.el_lv1Heading{
+  place-self: center left;
+  font-size: 80px;
+  font-weight: normal;
+}
+.el_sectTtl{
+  font-size: 24px;
+  font-weight: normal;
+}
+.bl_sect{
+  padding-block: 80px;
+  border-top: 1px solid #666;
+}
+.bl_imgBase{
+  aspect-ratio: 7 / 6;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bl_imgSingle{
+  width: min(100%,600px);
+  margin-top: 40px;
+}
+.bl_imgUnit{
+  --_gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--_gap);
+  margin-top: var(--_gap);
+}
