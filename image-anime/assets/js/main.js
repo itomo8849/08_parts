@@ -42,9 +42,10 @@ ScrollTrigger.batch(style1Els, {
 });
 
 const changeHeight = document.querySelector(".js_changeHeight");
-const img__1st = changeHeight.querySelector(".js_img__1");
-const img__2nd = changeHeight.querySelector(".js_img__2");
-var tlSec1 = gsap.timeline({
+const img1st = changeHeight.querySelector(".js_img__1");
+const img2nd = changeHeight.querySelector(".js_img__2");
+
+const changeHeightAnime = gsap.timeline({
   scrollTrigger: {
     trigger: changeHeight,
     start: "top top",
@@ -53,60 +54,49 @@ var tlSec1 = gsap.timeline({
   }
 });
 
-tlSec1.fromTo(img__2nd, {
+changeHeightAnime.fromTo(img2nd, {
   height: "0%",
 }, {
   height: "100%",
 })
-.fromTo(img__2nd.querySelector("img"), {
-  scale: "1.5",
+.fromTo(img2nd.querySelector("img"), {
+  scale: 1.5,
 }, {
-  scale: "1",
+  scale: 1,
 }, 0)
-.fromTo(img__1st, {
+.fromTo(img1st, {
   height: "100%",
 }, {
   height: "0%",
 }, 0)
-.fromTo(img__1st.querySelector("img"), {
-  scale: "1",
+.fromTo(img1st.querySelector("img"), {
+  scale: 1,
 }, {
-  scale: "1.5",
+  scale: 1.5,
 }, 0);
 
-const toBottomSect = document.querySelector(".js_toBottom");
-const toBottomTrigger2 = document.querySelector(".js_area__2");
-const toBottomTrigger3 = document.querySelector(".js_area__3");
-var toBottomAnime2 = gsap.timeline({
-  scrollTrigger: {
-    trigger: toBottomTrigger2,
-    start: "top bottom",
-    end: "50% 50%",
-    scrub: true,
-  }
-});
-toBottomAnime2.to(toBottomSect.querySelector(".js_img__2"), {
-    height: "100%",
-  })
-  .fromTo(toBottomSect.querySelector(".js_img__2 > img"), {
-    scale: 1.2,
-  }, {
-    scale: 1,
-  }, 0);
 
-var toBottomAnime3 = gsap.timeline({
-  scrollTrigger: {
-    trigger: toBottomTrigger3,
-    start: "top bottom",
-    end: "50% 50%",
-    scrub: true,
-  }
-});
-toBottomAnime3.to(toBottomSect.querySelector(".js_img__3"), {
+const toBottomSect = document.querySelector(".js_toBottom");
+const triggers = [
+  { trigger: document.querySelector(".js_area__2"), imgClass: ".js_img__2" },
+  { trigger: document.querySelector(".js_area__3"), imgClass: ".js_img__3" }
+];
+
+triggers.forEach(({ trigger, imgClass }) => {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: trigger,
+      start: "top bottom",
+      end: "50% 50%",
+      scrub: true,
+    }
+  })
+  .to(toBottomSect.querySelector(imgClass), {
     height: "100%",
   })
-  .fromTo(toBottomSect.querySelector(".js_img__3 > img"), {
+  .fromTo(toBottomSect.querySelector(`${imgClass} > img`), {
     scale: 1.2,
   }, {
     scale: 1,
   }, 0);
+});
