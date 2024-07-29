@@ -26,6 +26,7 @@ body{
 .el_ttl{
   font-size: 24px;
   font-weight: normal;
+  text-transform: capitalize;
 }
 .bl_sect{
   padding-block: 80px;
@@ -33,6 +34,7 @@ body{
 }
 .bl_text{
   margin-top: 24px;
+  line-height: 2;
 }
 .bl_imgBase{
   aspect-ratio: 7 / 6;

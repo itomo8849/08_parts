@@ -29,7 +29,7 @@ ScrollTrigger.batch(style1Els, {
     });
   },
   onLeaveBack: (elements) => {
-    elements.forEach((el, i) => {
+    elements.forEach((el) => {
       gsap.to(el, {
         opacity: 0,
         filter: "grayscale(100%) brightness(150%)",
@@ -74,36 +74,38 @@ tlSec1.fromTo(img__2nd, {
   scale: "1.5",
 }, 0);
 
-
-var reviewImg2 = gsap.timeline({
+const toBottomSect = document.querySelector(".js_toBottom");
+const toBottomTrigger2 = document.querySelector(".js_area__2");
+const toBottomTrigger3 = document.querySelector(".js_area__3");
+var toBottomAnime2 = gsap.timeline({
   scrollTrigger: {
-    trigger: ".js_area__2",
+    trigger: toBottomTrigger2,
     start: "top bottom",
     end: "50% 50%",
     scrub: true,
   }
 });
-reviewImg2.to(".bl_toBottom_img.js_img__2", {
+toBottomAnime2.to(toBottomSect.querySelector(".js_img__2"), {
     height: "100%",
   })
-  .fromTo(".bl_toBottom_img.js_img__2 img", {
+  .fromTo(toBottomSect.querySelector(".js_img__2 > img"), {
     scale: 1.2,
   }, {
     scale: 1,
   }, 0);
 
-var reviewImg3 = gsap.timeline({
+var toBottomAnime3 = gsap.timeline({
   scrollTrigger: {
-    trigger: ".js_area__3",
+    trigger: toBottomTrigger3,
     start: "top bottom",
     end: "50% 50%",
     scrub: true,
   }
 });
-reviewImg3.to(".bl_toBottom_img.js_img__3", {
+toBottomAnime3.to(toBottomSect.querySelector(".js_img__3"), {
     height: "100%",
   })
-  .fromTo(".bl_toBottom_img.js_img__3 img", {
+  .fromTo(toBottomSect.querySelector(".js_img__3 > img"), {
     scale: 1.2,
   }, {
     scale: 1,
