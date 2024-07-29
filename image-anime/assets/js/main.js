@@ -100,3 +100,55 @@ triggers.forEach(({ trigger, imgClass }) => {
     scale: 1,
   }, 0);
 });
+
+const blockAnime = document.querySelector(".js_blockAnime");
+const blockAnimeTriggers = [
+  { trigger: blockAnime.querySelector(".js_trigger__1"), areaClass: blockAnime.querySelector(".js_area__1") },
+  { trigger: blockAnime.querySelector(".js_trigger__2"), areaClass: blockAnime.querySelector(".js_area__2") },
+  { trigger: blockAnime.querySelector(".js_trigger__3"), areaClass: blockAnime.querySelector(".js_area__3") }
+];
+
+blockAnimeTriggers.forEach(({ trigger, areaClass }) => {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: trigger,
+      start: "top center",
+      end: "bottom center",
+      // markers: true,
+      toggleActions: 'play reverse play reverse',
+    }
+  })
+  .fromTo(areaClass.querySelector("img"), {
+    x: "100%",
+    opacity: 0,
+  }, {
+    x: 0,
+    opacity: 1,
+    duration: 0.3,
+  })
+  .fromTo(areaClass.querySelector(".bl_text"), {
+    x: "100%",
+    opacity: 0,
+  }, {
+    x: 0,
+    opacity: 1,
+    duration: 0.3,
+  }, "<")  // 追加：前のアニメーションと同時に開始
+  .fromTo(areaClass.querySelector(".el_ttl"), {
+    y: "100%",
+    opacity: 0,
+    duration: 0.3,
+  }, {
+    y: 0,
+    opacity: 1,
+    duration: 0.3,
+  }, "<")
+  // .fromTo(areaClass.querySelector("img"), {
+  //   filter: "grayscale(100%) brightness(150%)",
+  //   duration: 0.3,
+  // }, {
+  //   filter: "grayscale(0%) brightness(100%)",
+  //   duration: 0.3,
+  // },"-=0.1")
+  ;  // 追加：前のアニメーションと同時に開始
+});
