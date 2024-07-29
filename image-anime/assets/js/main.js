@@ -118,14 +118,6 @@ blockAnimeTriggers.forEach(({ trigger, areaClass }) => {
       toggleActions: 'play reverse play reverse',
     }
   })
-  .fromTo(areaClass.querySelector("img"), {
-    x: "100%",
-    opacity: 0,
-  }, {
-    x: 0,
-    opacity: 1,
-    duration: 0.3,
-  })
   .fromTo(areaClass.querySelector(".bl_text"), {
     x: "100%",
     opacity: 0,
@@ -133,7 +125,7 @@ blockAnimeTriggers.forEach(({ trigger, areaClass }) => {
     x: 0,
     opacity: 1,
     duration: 0.3,
-  }, "<")  // 追加：前のアニメーションと同時に開始
+  })  // 追加：前のアニメーションと同時に開始
   .fromTo(areaClass.querySelector(".el_ttl"), {
     y: "100%",
     opacity: 0,
@@ -143,6 +135,15 @@ blockAnimeTriggers.forEach(({ trigger, areaClass }) => {
     opacity: 1,
     duration: 0.3,
   }, "<")
+  .fromTo(areaClass.querySelector("img"), {
+    x: "100%",
+    opacity: 0,
+  }, {
+    x: 0,
+    opacity: 1,
+    duration: 0.3,
+  }, "<")
+  
   // .fromTo(areaClass.querySelector("img"), {
   //   filter: "grayscale(100%) brightness(150%)",
   //   duration: 0.3,

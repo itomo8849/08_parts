@@ -120,7 +120,7 @@ img{
 }
 .bl_trigger{
   width: 1px;
-  height: 150vh;
+  height: 100vh;
 }
 .bl_blockSticky{
   position: sticky;
@@ -145,6 +145,7 @@ img{
 .bl_blockAnime_imgUnit{
   width: 60%;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 .bl_triggerUnit {
   margin-left: -1px;
