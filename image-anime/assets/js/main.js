@@ -1,11 +1,11 @@
-const style1Els = document.querySelectorAll(".js_style_1");
+const part1Els = document.querySelectorAll(".js_part_1");
 
-gsap.set(style1Els, {
+gsap.set(part1Els, {
   opacity: 0,
   filter: "grayscale(100%) brightness(150%)",
 });
 
-ScrollTrigger.batch(style1Els, {
+ScrollTrigger.batch(part1Els, {
   start: "top 80%",
   onEnter: (elements) => {
     const tl = gsap.timeline({ defaults: { ease: "ease" } });
@@ -41,20 +41,20 @@ ScrollTrigger.batch(style1Els, {
   },
 });
 
-const changeHeight = document.querySelector(".js_changeHeight");
-const img1st = changeHeight.querySelector(".js_img__1");
-const img2nd = changeHeight.querySelector(".js_img__2");
+const part2El = document.querySelector(".js_part_2");
+const img1st = part2El.querySelector(".js_img__1");
+const img2nd = part2El.querySelector(".js_img__2");
 
-const changeHeightAnime = gsap.timeline({
+const part2ElAnime = gsap.timeline({
   scrollTrigger: {
-    trigger: changeHeight,
+    trigger: part2El,
     start: "top top",
     end: "bottom bottom",
     scrub: true,
   }
 });
 
-changeHeightAnime.fromTo(img2nd, {
+part2ElAnime.fromTo(img2nd, {
   height: "0%",
 }, {
   height: "100%",
@@ -76,10 +76,10 @@ changeHeightAnime.fromTo(img2nd, {
 }, 0);
 
 
-const toBottomSect = document.querySelector(".js_toBottom");
+const part3El = document.querySelector(".js_part_3");
 const triggers = [
-  { trigger: document.querySelector(".js_area__2"), imgClass: ".js_img__2" },
-  { trigger: document.querySelector(".js_area__3"), imgClass: ".js_img__3" }
+  { trigger: part3El.querySelector(".js_area__2"), imgClass: ".js_img__2" },
+  { trigger: part3El.querySelector(".js_area__3"), imgClass: ".js_img__3" }
 ];
 
 triggers.forEach(({ trigger, imgClass }) => {
@@ -91,24 +91,24 @@ triggers.forEach(({ trigger, imgClass }) => {
       scrub: true,
     }
   })
-  .to(toBottomSect.querySelector(imgClass), {
+  .to(part3El.querySelector(imgClass), {
     height: "100%",
   })
-  .fromTo(toBottomSect.querySelector(`${imgClass} > img`), {
+  .fromTo(part3El.querySelector(`${imgClass} > img`), {
     scale: 1.2,
   }, {
     scale: 1,
   }, 0);
 });
 
-const blockAnime = document.querySelector(".js_blockAnime");
-const blockAnimeTriggers = [
-  { trigger: blockAnime.querySelector(".js_trigger__1"), areaClass: blockAnime.querySelector(".js_area__1") },
-  { trigger: blockAnime.querySelector(".js_trigger__2"), areaClass: blockAnime.querySelector(".js_area__2") },
-  { trigger: blockAnime.querySelector(".js_trigger__3"), areaClass: blockAnime.querySelector(".js_area__3") }
+const part4El = document.querySelector(".js_part_4");
+const part4ElTriggers = [
+  { trigger: part4El.querySelector(".js_trigger__1"), areaClass: part4El.querySelector(".js_area__1") },
+  { trigger: part4El.querySelector(".js_trigger__2"), areaClass: part4El.querySelector(".js_area__2") },
+  { trigger: part4El.querySelector(".js_trigger__3"), areaClass: part4El.querySelector(".js_area__3") }
 ];
 
-blockAnimeTriggers.forEach(({ trigger, areaClass }) => {
+part4ElTriggers.forEach(({ trigger, areaClass }) => {
   gsap.timeline({
     scrollTrigger: {
       trigger: trigger,
@@ -126,7 +126,7 @@ blockAnimeTriggers.forEach(({ trigger, areaClass }) => {
     opacity: 1,
     duration: 0.3,
   })  // 追加：前のアニメーションと同時に開始
-  .fromTo(areaClass.querySelector(".el_ttl"), {
+  .fromTo(areaClass.querySelector(".el_lv3Heading"), {
     y: "100%",
     opacity: 0,
     duration: 0.3,
