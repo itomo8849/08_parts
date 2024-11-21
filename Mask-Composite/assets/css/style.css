@@ -1,0 +1,85 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "M PLUS 1 Code", monospace;
+  font-weight: 300;
+}
+ul{
+  list-style: none;
+  list-style-position: inside;
+}
+.ly_cont{
+  width: min(1200px,96%);
+  padding-left: 40px;
+  margin-inline: auto;
+}
+.ly_contWide{
+  width: 96%;
+  margin-inline: auto;
+}
+.ly_header{
+  display: grid;
+  height: 80vh;
+}
+.el_lv1Heading{
+  place-self: center left;
+  font-size: 80px;
+  font-weight: 300;
+}
+.el_lv2Heading{
+  color: #777;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.el_lv3Heading_wrapper{
+  overflow: hidden;
+}
+.el_lv3Heading{
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.bl_sect{
+  position: relative;
+  padding-block: 56px 80px;
+  border-top: 1px solid #666;
+}
+.bl_sectTtl{
+  position: sticky;
+  top: 50%;
+  left: 0;
+  transform: translate(-40px,-50%);
+  writing-mode: vertical-lr;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bl_boxUnit{
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 8px;
+}
+.bl_box_title{
+  font-weight: 300;
+}
+.bl_box_maskWrapper{
+  margin-top: 8px;
+  aspect-ratio: 6 / 4;
+  border: 1px solid #ccc;
+}
+.bl_box_mask{
+  width: 100%;
+  height: 100%;
+  mask-image: url("../images/circle_bk__01.png"),url("../images/circle_bk__02.png");
+   /* mask-image: url("https://ics-creative.github.io/241025_mask_composite/assets/mask1.png"),url("https://ics-creative.github.io/241025_mask_composite/assets/mask2.png"); */
+  mask-composite: add;
+  mask-size: 100%;
+  background-color: cadetblue;
+  /* background-image: url(../images/circle_bk__01.png); */
+}
