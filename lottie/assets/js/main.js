@@ -27,21 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const centerStart = document.querySelector("#centerStart");
+  const centerStarts = document.querySelectorAll(".centerStart");
 
-  // Lottieの準備ができたら処理
-  centerStart.addEventListener("ready", () => {
-    ScrollTrigger.create({
-      trigger: centerStart,
-      start: "top center", // 画面中央にきたら発火
-      onEnter: () => {
-        centerStart.seek(0);     // 最初に戻す
-        centerStart.play();      // 再生
-      },
-      onLeaveBack: () => {
-        centerStart.stop();      // 戻るときに停止
-      },
-      markers: true,
+  centerStarts.forEach((centerStart) => {
+    // Lottieの準備ができたら処理
+    centerStart.addEventListener("ready", () => {
+      ScrollTrigger.create({
+        trigger: centerStart,
+        start: "top center", // 画面中央にきたら発火
+        onEnter: () => {
+          centerStart.seek(0);  // 最初に戻す
+          centerStart.play();   // 再生
+        },
+        onLeaveBack: () => {
+          centerStart.stop();   // 戻るときに停止
+        },
+        markers: true,
+      });
     });
   });
 });
