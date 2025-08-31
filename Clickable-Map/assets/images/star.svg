@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <polygon id="main" class="cls-1" points="233.3 43.15 283.53 139.58 393.46 160.07 316.51 240.02 333 348.45 233.3 299.98 135.62 348.45 150.11 240.52 69.93 159.3 182.09 142.08 233.3 43.15"/>
+</svg>
