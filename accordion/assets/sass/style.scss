@@ -10,6 +10,12 @@
   }
 }
 
+// .bl_accordion {
+//   padding: 20px;
+//   border: 1px solid #333;
+//   border-radius: 20px;
+// }
+
 .bl_accordionHeader {
   --_line-size: 20px;
   --leading-base: 1.5;
@@ -41,34 +47,44 @@
     background: #000;
     transition: all 0.2s ease-out;
   }
+
   &::after {
     transform: translateY(-50%) rotate(90deg);
   }
+
   .is_opened &::before {
     opacity: 0;
   }
+
   .is_opened &::after {
     transform: translateY(-50%) rotate(0);
   }
+
   @include hover() {
     cursor: pointer;
   }
 }
+
 .bl_accordionHeader::-webkit-details-marker {
   /* Safariで表示されるデフォルトの三角形アイコンを消します */
   display: none;
 }
+
 .bl_accordionBody {
   overflow: hidden;
 }
+
 .bl_accordionBody_inner {
   padding-bottom: var(--_gap);
-  > div:not(:first-child) {
+
+  >div:not(:first-child) {
     margin-top: var(--_gap);
   }
+
   dt {
     font-weight: var(--font-bold);
   }
+
   dd {
     margin-top: var(--gutter-xs);
     font-weight: var(--font-medium);
