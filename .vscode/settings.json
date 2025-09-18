@@ -1,5 +1,5 @@
 {
   "editor.fontFamily": "'M PLUS 1 Code',Menlo, Monaco, 'Courier New', monospace",
-  "dartsass.targetDirectory": "Mask-Text/assets/css",
+  "dartsass.targetDirectory": "image-change/assets/css",
   "dartsass.outputFormat": "minified"
 }
