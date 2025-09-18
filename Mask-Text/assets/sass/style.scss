@@ -1,0 +1,62 @@
+@mixin hover() {
+  &:focus-visible {
+    @content;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+.bl_maskSect{
+  width: 600px;
+  
+  &::after{
+    content: '';
+    position: sticky;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 15vh;
+    background: url(../images/mask__02.png) repeat-x top / 80px;
+    z-index: 2;
+  }
+}
+.el_headingPart{
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background: url(../images/mask__01.png) repeat-x bottom / 80px;
+  z-index: 3;
+}
+.el_headingPartGradient{
+  display: flex;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e4e4e9;
+}
+.el_headingPartGradient_part{
+  background: linear-gradient(to right, #0096e0, #0251b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.el_headingPart_cont{
+  color: #204483;
+}
+
+.bl_maskSect_body{
+  position: relative;
+  padding-top: 100px;
+  z-index: 1;
+}
+
+.bl_maskSect_body p{
+  margin-bottom: 2em;
+}
