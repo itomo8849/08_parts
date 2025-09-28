@@ -1,0 +1,2 @@
+.bl_parallaxObj_wrapper{display:flex;align-items:center;justify-content:center;height:200px;background-image:linear-gradient(#aaa 2px, transparent 2px),linear-gradient(90deg, #aaa 2px, transparent 2px),linear-gradient(#aaa 1px, transparent 1px),linear-gradient(90deg, #aaa 1px, #fff 1px);background-size:100px 100px,100px 100px,20px 20px,20px 20px}.bl_parallaxObj{width:100px;height:100px;background:red;filter:blur(1.5rem)}
+/*# sourceMappingURL=style.min.css.map */
